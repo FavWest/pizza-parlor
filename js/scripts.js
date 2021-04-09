@@ -2,7 +2,8 @@
 function CustomerOrder(){
   this.pizzas={};
   this.currentId=0;
-}
+  this.orderCost=0;
+} 
 
 CustomerOrder.prototype.assignId=function(){
   this.currentId++;
@@ -88,17 +89,17 @@ function formatCostString(cost){
   }
 }
 
-let myPizza = new Pizza("large", "cheese");
-console.log(myPizza.toString())
-console.log("1 large pizza with cheese") 
-
 //UI Logic
+let customerOrder = new CustomerOrder();
+console.log(customerOrder.orderCost);
+
 $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
     event.preventDefault();
     let pizza=new Pizza($("#size").val(), $("#toppings").val());
+    $("#items-ordered").append(`<li>${pizza.toString()}</li>`);
     let cost=pizza.getCost();
-    cost=formatCostString(cost);
+    cost=formatCostString(cost); 
     $("#cost").text(cost);
     $("#display-cost").show();
   });
