@@ -26,6 +26,10 @@ Pizza.prototype.getCost=function(){
   return cost;
 }
 
+Pizza.prototype.toString=function(){
+  return(`1 ${this.size} pizza with ${this.toppings}`);
+}
+
 function getCostForSize(size){
   let cost=0;
   switch(size) {
@@ -83,6 +87,10 @@ function formatCostString(cost){
     return "Error, please try again";
   }
 }
+
+let myPizza = new Pizza("large", "cheese");
+console.log(myPizza.toString())
+console.log("1 large pizza with cheese") 
 
 //UI Logic
 $(document).ready(function() {
