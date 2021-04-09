@@ -16,10 +16,17 @@ Pizza.prototype.getCost=function(){
       cost+=20;
       break;
     default:
-      cost="error, cannot calculate cost; invalid response received for pizza size. Please try again."
+      cost="Error: cannot calculate cost; invalid response received for pizza size. Please try again."
   }
-  if(this.toppings === "cheese") {
-    cost+=0;
+  switch(this.toppings) {
+    case ("cheese"):
+      cost+=0;
+      break;
+    case ("mushroom"):
+      cost+=0.5;
+      break;
+    default:
+      cost="Error, cannot calculate cost; invalid response received for pizza toppings. Please try again."
   }
   return cost;
 }
@@ -32,4 +39,7 @@ console.log(10);
 console.log(myPizza.getCost());
 myPizza = new Pizza("large", "cheese");
 console.log(20)
+console.log(myPizza.getCost());
+myPizza = new Pizza("small", "mushroom");
+console.log(10.5);
 console.log(myPizza.getCost());
