@@ -98,6 +98,11 @@ let customerOrder = new CustomerOrder();
 console.log(customerOrder.pizzas, customerOrder.currentId);  
 Expected Result: {} 0   
 
+Test: "It should construct a CustomerOrder that includes a orderCost property that starts at value 0"  
+let customerOrder = new CustomerOrder();  
+console.log(customerOrder.orderCost);
+Expected Result: 0
+
 #### Describe: CustomerOrder.prototype.assignId()  
 Test: "Take the currentId and increment it by 1; return result"  
 Code:   
