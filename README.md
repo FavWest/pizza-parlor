@@ -76,3 +76,11 @@ Expected Results: "15.33"
 Test: "It should still return a float or double as a string rounded to two decimal places when the second decimal place contains a zero."
 Code: formatCostString(15.5)
 Expected Results: "15.50"
+
+Test: "It should still return a float or double as a string rounded to two decimal places when the value is less than 10"
+Code: formatCostString(3.14444)
+Expected Results: "3.14"
+
+Test: "It should still return a float or double as a string rounded to two decimal places when the value is less greater than 100"
+Code: formatCostString(455.9022)
+Expected Results: "455.90"
