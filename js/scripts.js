@@ -68,6 +68,7 @@ function formatCostString(cost){
   }
 }
 
+console.log(formatCostString(1.3399))
 //UI Logic
 $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
