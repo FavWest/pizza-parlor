@@ -35,9 +35,30 @@ Copyright (c) 2021 Victoria West
 Victoria West email@email.com
 
 ## Specs
-#### Describe: Pizza
+#### Describe: Pizza()
 Test: "It should construct a Pizza type object with size and toppings properties.
 Code:
 let myPizza = new Pizza("small", "cheese");
 console.log(`You ordered a ${myPizza.size} ${myPizza.toppings} pizza`);
 Expected Result: "You ordered a small cheese pizza"
+
+#### Describe: Pizza.prototype.getCost()
+Test: "It should return a cost based on the Pizza's size and toppings"
+Code: let myPizza = new Pizza("small", "cheese");
+console.log(myPizza.getCost());
+Expected Result: 10
+
+Test: "It should increase the cost for a larger Pizza"
+Code: let myPizza = new Pizza("large", "cheese");
+console.log(myPizza.getCost());
+Expected Result: 20
+
+Test: "It should increase the cost for a more expensive topping"
+Code: let myPizza = new Pizza("small", "mushroom");
+console.log(myPizza.getCost());
+Expected Result: 10.5
+
+Test: "It should scale the cost increase of the topping based on the size of the pizza"
+Code: let myPizza = new Pizza("large", "mushroom");
+console.log(myPizza.getCost());
+Expected Result: 21
