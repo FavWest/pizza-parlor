@@ -64,6 +64,12 @@ Code: let myPizza = new Pizza("large", "mushroom");
 console.log(myPizza.getCost());  
 Expected Result: 21  
 
+#### Describe: Pizza.prototype.toString()  
+Test: "It should return a string describing the pizza"  
+Code: let myPizza = new Pizza("large", "cheese");
+console.log(myPizza.toString();)
+Expected Result: "1 large pizza with cheese"
+
 #### Describe: formatCostString()  
 Test: "It should return an integer as a string"  
 Code: formatCostString(15);  
