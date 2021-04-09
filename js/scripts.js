@@ -61,14 +61,18 @@ function getCostForToppings(toppings, size){
 function formatCostString(cost){
   if((Number.isInteger(cost))||cost===0){
     return cost.toString();
-  } else if(Number.isFinite(cost)&&cost<100){
-    return cost.toPrecision(4);
+  }
+  else if(Number.isFinite(cost)&&cost<100){
+    let dollars=parseInt(cost);
+    let pennies=parseFloat((cost-dollars).toPrecision(2));
+    cost=dollars+pennies;
+    return cost.toString();
   } else {
     return "Error, please try again";
   }
 }
 
-console.log(formatCostString(1.3399))
+console.log(formatCostString(3.14444))
 //UI Logic
 $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
