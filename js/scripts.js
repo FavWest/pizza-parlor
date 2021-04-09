@@ -58,12 +58,18 @@ function getCostForToppings(toppings, size){
   return toppingCost*multiplier;
 }
 
+function formatCostString(cost){
+  return cost.toString();
+}
+
 //UI Logic
 $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
     event.preventDefault();
     let pizza=new Pizza($("#size").val(), $("#toppings").val());
-    $("#cost").text(pizza.getCost());
+    let cost=pizza.getCost();
+    cost=formatCostString(cost);
+    $("#cost").text(cost);
     $("#display-cost").show();
   });
 });
