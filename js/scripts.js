@@ -93,18 +93,14 @@ function formatCostString(cost){
 
 //UI Logic
 let customerOrder = new CustomerOrder();   
-let myPizza = new Pizza("small", "mushroom");  
-let morePizza = new Pizza("large", "cheese");  
-customerOrder.addPizza(myPizza);  
-customerOrder.addPizza(morePizza);  
-console.log(customerOrder.orderCost);
 
 $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
     event.preventDefault();
     const pizza=new Pizza($("#size").val(), $("#toppings").val());
     $("#items-ordered").append(`<li>${pizza.toString()}</li>`);
-    let cost=pizza.cost;
+    customerOrder.addPizza(pizza);
+    let cost=customerOrder.orderCost;
     cost=formatCostString(cost); 
     $("#cost").text(cost);
     $("#display-cost").show();
