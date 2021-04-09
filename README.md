@@ -123,7 +123,7 @@ let customerOrder = new CustomerOrder();
 let myPizza = new Pizza("small", "mushroom");  
 customerOrder.addPizza(myPizza);  
 console.log(customerOrder.pizzas);  
-Expected Result: {1:{size: "small", toppings: "mushroom"}}  
+Expected Result: {1:{size: "small", toppings: "mushroom", cost: 10.5}}  
 
 Test: "It should work multiple times, incrementing Id each time"    
 Code:   
@@ -133,4 +133,13 @@ let morePizza = new Pizza("large", "cheese");
 customerOrder.addPizza(myPizza);  
 customerOrder.addPizza(morePizza);  
 console.log(customerOrder.pizzas);  
-Expected Result: {1:{size: "small", toppings: "mushroom"}, 2:{size: "large", toppings: "cheese"}}  
+Expected Result: {1:{size: "small", toppings: "mushroom", cost: 10.5}, 2:{size: "large", toppings: "cheese", cost: 20}}  
+
+Test: "It should add the Pizza's cost to the CustomerOrder's orderCost"
+Code: let customerOrder = new CustomerOrder();   
+let myPizza = new Pizza("small", "mushroom");  
+let morePizza = new Pizza("large", "cheese");  
+customerOrder.addPizza(myPizza);  
+customerOrder.addPizza(morePizza);  
+console.log(customerOrder.orderCost);  
+Expected Result: 30.5
