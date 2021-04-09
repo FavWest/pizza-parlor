@@ -59,7 +59,13 @@ function getCostForToppings(toppings, size){
 }
 
 function formatCostString(cost){
-  return cost.toString();
+  if((Number.isInteger(cost))||cost===0){
+    return cost.toString();
+  } else if(Number.isFinite(cost)&&cost<100){
+    return cost.toPrecision(4);
+  } else {
+    return "Error, please try again";
+  }
 }
 
 //UI Logic
