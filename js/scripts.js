@@ -18,13 +18,17 @@ CustomerOrder.prototype.addPizza=function(pizza){
 function Pizza(size, toppings){
   this.size=size;
   this.toppings=toppings;
-}
-
-Pizza.prototype.getCost=function(){
   let cost=0;
   cost+=getCostForSize(this.size);
   cost+=getCostForToppings(this.toppings, this.size);
-  return cost;
+  this.cost=cost;
+}
+
+let myPizza = new Pizza("small", "cheese"); 
+console.log(myPizza.cost);
+
+Pizza.prototype.getCost=function(){
+  return this.cost;
 }
 
 Pizza.prototype.toString=function(){
@@ -91,14 +95,13 @@ function formatCostString(cost){
 
 //UI Logic
 let customerOrder = new CustomerOrder();
-console.log(customerOrder.orderCost);
 
 $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
     event.preventDefault();
-    let pizza=new Pizza($("#size").val(), $("#toppings").val());
+    const pizza=new Pizza($("#size").val(), $("#toppings").val());
     $("#items-ordered").append(`<li>${pizza.toString()}</li>`);
-    let cost=pizza.getCost();
+    let cost=pizza.cost;
     cost=formatCostString(cost); 
     $("#cost").text(cost);
     $("#display-cost").show();
