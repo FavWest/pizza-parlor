@@ -1,4 +1,3 @@
-//Business Logic
 function CustomerOrder(){
   this.pizzas={};
   this.currentId=0;
@@ -103,6 +102,6 @@ $(document).ready(function() {
     let cost=customerOrder.orderCost;
     cost=formatCostString(cost); 
     $("#cost").text(cost);
-    $("#display-cost").show();
+    $(".display-after-submit").show();
   });
 });
