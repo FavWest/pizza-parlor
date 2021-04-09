@@ -1,3 +1,4 @@
+//Business Logic
 function Pizza(size, toppings){
   this.size=size;
   this.toppings=toppings;
@@ -57,10 +58,12 @@ function getCostForToppings(toppings, size){
   return toppingCost*multiplier;
 }
 
+//UI Logic
 $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
     event.preventDefault();
     let pizza=new Pizza($("#size").val(), $("#toppings").val());
     $("#cost").text(pizza.getCost());
+    $("#display-cost").show();
   });
 });
