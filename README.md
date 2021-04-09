@@ -27,8 +27,8 @@ _Fill in an order form that specifies pizza size and toppings. Receive a respons
 * Open Portfolio folder in Explorer or Finder
 * Double-click "index.html" to open in a browser
 ## Known Bugs
-* Returns an error for non-integer cost totals over 100
-* Returns three decimal places for non-integer cost totals under 10
+* Returns an error for non-integer cost totals over 100 FIXED 4-9-2021
+* Returns three decimal places for non-integer cost totals under 10 FIXED 4-9-2021
 ## License
 MIT
 Copyright (c) 2021 Victoria West
@@ -37,50 +37,50 @@ Victoria West email@email.com
 
 ## Specs
 #### Describe: Pizza()
-Test: "It should construct a Pizza type object with size and toppings properties.
-Code:
-let myPizza = new Pizza("small", "cheese");
-console.log(`You ordered a ${myPizza.size} ${myPizza.toppings} pizza`);
-Expected Result: "You ordered a small cheese pizza"
+Test: "It should construct a Pizza type object with size and toppings properties."  
+Code:  
+let myPizza = new Pizza("small", "cheese");  
+console.log(`You ordered a ${myPizza.size} ${myPizza.toppings} pizza`);  
+Expected Result: "You ordered a small cheese pizza"  
 
-#### Describe: Pizza.prototype.getCost()
-Test: "It should return a cost based on the Pizza's size and toppings"
-Code: let myPizza = new Pizza("small", "cheese");
-console.log(myPizza.getCost());
-Expected Result: 10
+#### Describe: Pizza.prototype.getCost()  
+Test: "It should return a cost based on the Pizza's size and toppings"  
+Code: let myPizza = new Pizza("small", "cheese");  
+console.log(myPizza.getCost());  
+Expected Result: 10  
 
-Test: "It should increase the cost for a larger Pizza"
-Code: let myPizza = new Pizza("large", "cheese");
-console.log(myPizza.getCost());
-Expected Result: 20
+Test: "It should increase the cost for a larger Pizza"  
+Code: let myPizza = new Pizza("large", "cheese");  
+console.log(myPizza.getCost());  
+Expected Result: 20  
 
-Test: "It should increase the cost for a more expensive topping"
-Code: let myPizza = new Pizza("small", "mushroom");
-console.log(myPizza.getCost());
-Expected Result: 10.5
+Test: "It should increase the cost for a more expensive topping"  
+Code: let myPizza = new Pizza("small", "mushroom");  
+console.log(myPizza.getCost());  
+Expected Result: 10.5  
 
-Test: "It should scale the cost increase of the topping based on the size of the pizza"
-Code: let myPizza = new Pizza("large", "mushroom");
-console.log(myPizza.getCost());
-Expected Result: 21
+Test: "It should scale the cost increase of the topping based on the size of the pizza"  
+Code: let myPizza = new Pizza("large", "mushroom");  
+console.log(myPizza.getCost());  
+Expected Result: 21  
 
-#### Describe: formatCostString()
-Test: "It should return an integer as a string"
-Code: formatCostString(15);
-Expected Result: "15"
+#### Describe: formatCostString()  
+Test: "It should return an integer as a string"  
+Code: formatCostString(15);  
+Expected Result: "15"  
 
-Test: "It should return a float or double as a string rounded to two decimal places"
-Code: formatCostString(15.3333)
-Expected Results: "15.33"
+Test: "It should return a float or double as a string rounded to two decimal places"  
+Code: formatCostString(15.3333);    
+Expected Results: "15.33"  
 
-Test: "It should still return a float or double as a string rounded to two decimal places when the second decimal place contains a zero."
-Code: formatCostString(15.5)
-Expected Results: "15.50"
+Test: "It should still return a float or double as a string rounded to two decimal places when the second decimal place contains a zero."  
+Code: formatCostString(15.5);  
+Expected Results: "15.50"  
 
-Test: "It should still return a float or double as a string rounded to two decimal places when the value is less than 10"
-Code: formatCostString(3.14444)
-Expected Results: "3.14"
+Test: "It should still return a float or double as a string rounded to two decimal places when the value is less than 10"  
+Code: formatCostString(3.14444);  
+Expected Results: "3.14"  
 
-Test: "It should still return a float or double as a string rounded to two decimal places when the value is less greater than 100"
-Code: formatCostString(455.9022)
-Expected Results: "455.90"
+Test: "It should still return a float or double as a string rounded to two decimal places when the value is less greater than 100"  
+Code: formatCostString(455.9022)  
+Expected Results: "455.90"  

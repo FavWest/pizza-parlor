@@ -62,17 +62,13 @@ function formatCostString(cost){
   if((Number.isInteger(cost))||cost===0){
     return cost.toString();
   }
-  else if(Number.isFinite(cost)&&cost<100){
-    let dollars=parseInt(cost);
-    let pennies=parseFloat((cost-dollars).toPrecision(2));
-    cost=dollars+pennies;
-    return cost.toString();
+  else if(Number.isFinite(cost)){
+    return cost.toFixed(2).toString();
   } else {
     return "Error, please try again";
   }
 }
 
-console.log(formatCostString(3.14444))
 //UI Logic
 $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
