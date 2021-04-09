@@ -12,7 +12,7 @@ Choose your pizza size and toppings, and receive your pizza and bill. Independen
 * JavaScript
 
 ## Description
-_Fill in an order form that specifies pizza size and toppings. Receive a response that describes your pizza and includes a price determined by the size and toppings you selected._
+_Fill in an order form that specifies pizza size and toppings. Submitting the form adds that pizza to your order and displays your order and the total cost of that order._
 
 ## Setup/Installation Requirements
 ### Run Locally
