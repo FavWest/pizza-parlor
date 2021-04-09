@@ -84,3 +84,36 @@ Expected Results: "3.14"
 Test: "It should still return a float or double as a string rounded to two decimal places when the value is less greater than 100"  
 Code: formatCostString(455.9022)  
 Expected Results: "455.90"  
+
+#### Describe: CustomerOrder()  
+Test: "It should construct a CustomerOrder object"  
+Code:   
+let customerOrder = new CustomerOrder();  
+console.log(customerOrder.pizzas, customerOrder.currentId);  
+Expected Result: {} 0   
+
+#### Describe: CustomerOrder.prototype.assignId()  
+Test: "Take the currentId and increment it by 1; return result"  
+Code:   
+let customerOrder = new CustomerOrder();  
+console.log(customerOrder.assignId, customerOrder.currentId);  
+Expected Result: 1 1  
+
+#### Describe: CustomerOrder.prototype.addPizza()  
+Test: "It should add a Pizza to the CustomerOrder's pizza collection, using a unique ID as the Pizza's key."  
+Code:  
+let customerOrder = new CustomerOrder();  
+let myPizza = new Pizza("small", "mushroom");  
+customerOrder.addPizza(myPizza);  
+console.log(customerOrder.pizzas);  
+Expected Result: {1:{size: "small", toppings: "mushroom"}}  
+
+Test: "It should work multiple times, incrementing Id each time"    
+Code:   
+let customerOrder = new CustomerOrder();   
+let myPizza = new Pizza("small", "mushroom");  
+let morePizza = new Pizza("large", "cheese");  
+customerOrder.addPizza(myPizza);  
+customerOrder.addPizza(morePizza);  
+console.log(customerOrder.pizzas);  
+Expected Result: {1:{size: "small", toppings: "mushroom"}, 2:{size: "large", toppings: "cheese"}}  
