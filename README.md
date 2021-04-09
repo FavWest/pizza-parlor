@@ -27,7 +27,8 @@ _Fill in an order form that specifies pizza size and toppings. Receive a respons
 * Open Portfolio folder in Explorer or Finder
 * Double-click "index.html" to open in a browser
 ## Known Bugs
-* 
+* Returns an error for non-integer cost totals over 100
+* Returns three decimal places for non-integer cost totals under 10
 ## License
 MIT
 Copyright (c) 2021 Victoria West
