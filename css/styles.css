@@ -6,8 +6,20 @@
   border: 1px solid cornflowerblue;
   font-size: larger;
   background-color: cornsilk;
+  padding: 5px;
 }
 
 ul.box-style{
   width: 35%;
+}
+
+#pizza-order{
+  font-style: italic;
+  font-size: larger;
+}
+
+button{
+  background-color:cornsilk;
+  border: 2px solid cornflowerblue;
+  border-radius: 10%;
 }
