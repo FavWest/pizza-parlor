@@ -6,7 +6,7 @@ function Pizza(size, toppings){
 Pizza.prototype.getCost=function(){
   let cost=0;
   cost+=getCostForSize(this.size);
-  cost+=getCostForToppings(this.size, this.toppings)
+  cost+=getCostForToppings(this.toppings, this.size);
   return cost;
 }
 
@@ -28,7 +28,7 @@ function getCostForSize(size){
   return cost;
 }
 
-function getCostForToppings(size, toppings){
+function getCostForToppings(toppings, size){
   let toppingCost=0;
   let multiplier=1;
   switch(size) {
