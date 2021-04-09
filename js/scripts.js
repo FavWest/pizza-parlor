@@ -14,12 +14,6 @@ CustomerOrder.prototype.addPizza=function(pizza){
   this.pizzas[id]=pizza;
 }
 
-let customerOrder = new CustomerOrder();  
-let myPizza = new Pizza("small", "mushroom");  
-customerOrder.addPizza(myPizza);  
-console.log('{1:{size: "small", toppings: "mushroom"}}')
-console.log(customerOrder.pizzas);  
-
 function Pizza(size, toppings){
   this.size=size;
   this.toppings=toppings;
