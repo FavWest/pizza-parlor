@@ -1,4 +1,9 @@
 //Business Logic
+function CustomerOrder(){
+  this.pizzas={};
+  this.currentId=0;
+}
+
 function Pizza(size, toppings){
   this.size=size;
   this.toppings=toppings;
@@ -68,6 +73,10 @@ function formatCostString(cost){
     return "Error, please try again";
   }
 }
+
+let customerOrder = new CustomerOrder();  
+console.log("{} 0")
+console.log(customerOrder.pizzas, customerOrder.currentId);
 
 //UI Logic
 $(document).ready(function() {
