@@ -62,3 +62,16 @@ Test: "It should scale the cost increase of the topping based on the size of the
 Code: let myPizza = new Pizza("large", "mushroom");
 console.log(myPizza.getCost());
 Expected Result: 21
+
+#### Describe: formatCostString()
+Test: "It should return an integer as a string"
+Code: formatCostString(15);
+Expected Result: "15"
+
+Test: "It should return a float or double as a string rounded to two decimal places"
+Code: formatCostString(15.3333)
+Expected Results: "15.33"
+
+Test: "It should still return a float or double as a string rounded to two decimal places when the second decimal place contains a zero."
+Code: formatCostString(15.5)
+Expected Results: "15.50"
