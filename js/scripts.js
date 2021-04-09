@@ -57,18 +57,10 @@ function getCostForToppings(toppings, size){
   return toppingCost*multiplier;
 }
 
-//TESTS
-let myPizza = new Pizza("small", "cheese");
-console.log("You ordered a small cheese pizza");
-console.log(`You ordered a ${myPizza.size} ${myPizza.toppings} pizza`);
-console.log(10);
-console.log(myPizza.getCost());
-myPizza = new Pizza("large", "cheese");
-console.log(20)
-console.log(myPizza.getCost());
-myPizza = new Pizza("small", "mushroom");
-console.log(10.5);
-console.log(myPizza.getCost());
-myPizza = new Pizza("large", "mushroom");
-console.log(21);
-console.log(myPizza.getCost());
+$(document).ready(function() {
+  $("#pizza-order").submit(function(event) {
+    event.preventDefault();
+    let pizza=new Pizza($("#size").val(), $("#toppings").val());
+    $("#cost").text(pizza.getCost());
+  });
+});
