@@ -43,6 +43,12 @@ let myPizza = new Pizza("small", "cheese");
 console.log(`You ordered a ${myPizza.size} ${myPizza.toppings} pizza`);  
 Expected Result: "You ordered a small cheese pizza"  
 
+Test: "Pizza should have a property 'cost'"  
+Code:  
+let myPizza = new Pizza("small", "cheese"); 
+console.log(myPizza.cost);
+Expected Result: 10
+
 #### Describe: Pizza.prototype.getCost()  
 Test: "It should return a cost based on the Pizza's size and toppings"  
 Code: let myPizza = new Pizza("small", "cheese");  
