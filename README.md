@@ -96,7 +96,7 @@ Expected Result: {} 0
 Test: "Take the currentId and increment it by 1; return result"  
 Code:   
 let customerOrder = new CustomerOrder();  
-console.log(customerOrder.assignId, customerOrder.currentId);  
+console.log(customerOrder.assignId(), customerOrder.currentId);  
 Expected Result: 1 1  
 
 #### Describe: CustomerOrder.prototype.addPizza()  

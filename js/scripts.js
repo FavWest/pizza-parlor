@@ -4,6 +4,14 @@ function CustomerOrder(){
   this.currentId=0;
 }
 
+CustomerOrder.prototype.assignId=function(){
+  this.currentId++;
+  return this.currentId;
+}
+
+let customerOrder = new CustomerOrder();  
+console.log(customerOrder.assignId(), customerOrder.currentId);  
+
 function Pizza(size, toppings){
   this.size=size;
   this.toppings=toppings;
@@ -73,10 +81,6 @@ function formatCostString(cost){
     return "Error, please try again";
   }
 }
-
-let customerOrder = new CustomerOrder();  
-console.log("{} 0")
-console.log(customerOrder.pizzas, customerOrder.currentId);
 
 //UI Logic
 $(document).ready(function() {
